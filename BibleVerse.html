@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Verses</title>
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding-left: 50px; 
+            padding-right: 50px; 
+        }
+        button {
+            width: 200px;
+            height: 100px;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        #content {
+            margin: 10px;
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Jeremiah 33:3</h2>
+        <h3>"Call to me and I will answer you and tell you great and unsearchable things you do not know."</h3>
+    </div>
+
+    <button onclick="changeStyle()">Add Design</button>
+    <button onclick="removeStyle()">Remove Design</button>
+
+    <script>
+        var body = document.querySelector('body');
+        var buttons = document.querySelectorAll('button'); 
+        var container = document.querySelector('.container');
+
+        function changeStyle() {
+            body.style.fontFamily = 'Courier'; 
+            body.style.backgroundImage = "url('https://i.imgur.com/yAYYhGU.png')";
+
+            buttons.forEach(button => { 
+                button.style.backgroundColor = '#87bafd';
+                button.style.borderRadius = '5%';
+            });
+
+            Object.assign(container.style, {
+                backgroundColor: '#87bafd',
+                borderStyle: 'solid',
+                height: 'auto',
+                width: '800px',
+                marginTop: '10px',
+                padding: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+            });
+        }
+
+        function removeStyle() {
+            body.style = ''; 
+            buttons.forEach(button => { 
+                button.style = ''; 
+            });
+            container.style = '';
+        }
+    </script>
+
+</body>
+</html>
